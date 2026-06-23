@@ -31,7 +31,7 @@ KAGGLE_USERNAME = "miguel7penteado"
 KAGGLE_DATASET_SLUG = "PCS5022-2026"
 
 DATASET_ID = f"{KAGGLE_USERNAME}/{KAGGLE_DATASET_SLUG}"
-DATASET_TITLE = "Treinamento Rede Neural Multimodal"
+DATASET_TITLE = "Multimodal Neural Network Training"
 LICENSE_NAME = "CC-BY-SA-4.0"
 
 
@@ -124,9 +124,9 @@ def write_readme():
     """
     readme = f"""# {DATASET_TITLE}
 
-Dataset contendo imagens PNG e arquivos JSONL com perguntas associadas às imagens.
+Dataset containing PNG images and JSONL files with questions associated with the images.
 
-## Identificador Kaggle
+## Kaggle Identifier
 
 ```text
 {DATASET_ID}
@@ -144,15 +144,19 @@ test_dataset/
 └── text/
 ```
 
-## Organização
+## Organization of dataset directories
 
-- `train_dataset/images/`: imagens de treino.
-- `train_dataset/text/`: arquivos JSONL de treino.
-- `test_dataset/images/`: imagens de teste.
-- `test_dataset/text/`: arquivos JSONL de teste.
+- `train_dataset/images/`: Workout PNG images.
+- `train_dataset/text/`: training JSONL files.
+- `test_dataset/images/`: Test PNG images.
+- `test_dataset/text/`: test JSONL files.
 
 
-Este dataset foi preparado para ser armazenado no Kaggle, enquanto o código-fonte do projeto pode permanecer em um repositório GitHub separado.
+The code is hosted on github https://github.com/miguel7penteado/PCS5022
+
+```cmd
+git clone git@github.com:miguel7penteado/PCS5022.git
+```
 
 """
 
