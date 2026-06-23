@@ -4,11 +4,11 @@
 
 ```
                       ┌──────────────────────────────┐
-Imagem 224×224×3 ───► │ CNN: Conv/Pool/Conv/Pool/... │ ───► Dense 256 ─┐
-                      └──────────────────────────────┘                 │
-                                                                         ├──► Concatenate ─► Dense 256 ─► Dense 128 ─► Softmax
-                      ┌──────────────────────────────┐                 │
-Pergunta texto ─────► │ Embedding 128 + BiGRU 128     │ ───► Dense 128 ─┘
+Imagem 224×224×3 ───► │ CNN: Conv/Pool/Conv/Pool/... │ ───► Dense 256  ─┐
+                      └──────────────────────────────┘                  │
+                                                                        ├──► Concatenate ─► Dense 256 ─► Dense 128 ─► Softmax
+                      ┌──────────────────────────────┐                  │
+Pergunta texto ─────► │ Embedding 128 + BiGRU 128    │ ───► Dense 128  ─┘
                       └──────────────────────────────┘
 ```
 
