@@ -1,5 +1,26 @@
 # Deep Learning kaggle challenge
 
+## Multimodal
+
+### Image module (ConvNet)
+
+| Nome da Camada no Código | Width (W) | Height (H) | Depth (C) |                       Explicação Técnica                      |
+|:------------------------:|:---------:|:----------:|:---------:|:-------------------------------------------------------------:|
+| Imagem de Entrada        | 224       | 224        | 3         | Resolução inicial em RGB.                                     |
+| Conv2D (32, 3)           | 224       | 224        | 32        | Mantém tamanho por causa do padding="same".                   |
+| MaxPooling2D()           | 112       | 112        | 32        | Reduz as dimensões espaciais pela metade.                     |
+| Conv2D (64, 3)           | 112       | 112        | 64        | Sobe para 64 canais/filtros.                                  |
+| MaxPooling2D()           | 56        | 56         | 64        | Reduz o mapa de características pela metade.                  |
+| Conv2D (128, 3)          | 56        | 56         | 128       | Sobe para 128 canais.                                         |
+| MaxPooling2D()           | 28        | 28         | 128       | Reduz novamente pela metade.                                  |
+| Conv2D (256, 3)          | 28        | 28         | 256       | Última camada convolucional com 256 filtros.                  |
+| GlobalAveragePooling2D() | 1         | 1          | 256       | Reduz o espaço $28 \times 28$ tirando a média (vetor linear). |
+| Dense(256)               | 1         | 1          | 256       | Camada totalmente conectada (Vetor de características).       |
+
+[](media/ConvNet.jpg)
+
+### Text module ()
+
 ## The Neural Network
 
 ```cmd
