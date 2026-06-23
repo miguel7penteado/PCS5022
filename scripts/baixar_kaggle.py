@@ -2,8 +2,13 @@ import subprocess
 from pathlib import Path
 
 
-DATASET = "miguelpenteado/meu-dataset-imagens-perguntas"
-DEST = Path("data") / "dataset"
+KAGGLE_USERNAME = "miguel7penteado"
+KAGGLE_DATASET_SLUG = "meu-dataset-imagens-perguntas"
+
+DATASET = f"{KAGGLE_USERNAME}/{KAGGLE_DATASET_SLUG}"
+
+# O dataset será baixado para a pasta dataset/
+DEST = Path("dataset")
 
 
 def main():
@@ -20,9 +25,14 @@ def main():
         "--unzip",
     ]
 
+    print(f"Baixando dataset Kaggle: {DATASET}")
+    print(f"Destino local: {DEST}")
+    print()
+
     subprocess.run(comando, check=True)
 
-    print(f"Dataset baixado em: {DEST}")
+    print()
+    print(f"Dataset baixado com sucesso em: {DEST}")
 
 
 if __name__ == "__main__":
