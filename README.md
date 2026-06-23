@@ -2,6 +2,16 @@
 
 ## Multimodal
 
+```
+                      ┌──────────────────────────────┐
+Imagem 224×224×3 ───► │ CNN: Conv/Pool/Conv/Pool/... │ ───► Dense 256 ─┐
+                      └──────────────────────────────┘                 │
+                                                                         ├──► Concatenate ─► Dense 256 ─► Dense 128 ─► Softmax
+                      ┌──────────────────────────────┐                 │
+Pergunta texto ─────► │ Embedding 128 + BiGRU 128     │ ───► Dense 128 ─┘
+                      └──────────────────────────────┘
+```
+
 ### Image module (ConvNet)
 
 | Nome da Camada no Código | Width (W) | Height (H) | Depth (C) |                       Explicação Técnica                      |
@@ -17,9 +27,9 @@
 | GlobalAveragePooling2D() | 1         | 1          | 256       | Reduz o espaço $28 \times 28$ tirando a média (vetor linear). |
 | Dense(256)               | 1         | 1          | 256       | Camada totalmente conectada (Vetor de características).       |
 
-[](media/ConvNet.jpg)
+![](media/ConvNet.jpg)
 
-### Text module ()
+### Text module (Embedding)
 
 ## The Neural Network
 
